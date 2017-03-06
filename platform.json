@@ -1,0 +1,53 @@
+{
+  "name": "ciaanxp",
+  "title": "CIAA, NXP",
+  "description": "CIAA DEB",
+  "url": "http://proyecto-ciaa.com.ar/",
+  "homepage": "http://platformio.org/platforms/myplatform",
+  "license": "Apache-2.0",
+  "engines": {
+    "platformio": "~3.0.0",
+    "scons": ">=2.3.0,<2.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramirog/platformio-ciaa-nxp.git"
+  },
+  "version": "0.0.1",
+  "packageRepositories": [
+    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
+    "https://sourceforge.net/projects/platformio-storage/files/packages/manifest.json/download",
+    "http://dl.platformio.org/packages/manifest.json",
+    {
+      "framework-ciaafirmwarev2": [
+        {
+          "url": "https://github.com/ramirog/platformio-framework-ciaafirmwarev2/archive/master.zip",
+          "version": "0.10000.0",
+          "system": "*"
+        }
+      ]
+    }
+  ],
+  "frameworks": {
+    "ciaafirmwarev2": {
+      "package": "framework-ciaafirmwarev2",
+      "script": "builder/frameworks/ciaafirmwarev2.py"
+    }
+  },
+  "packages": {
+    "toolchain-gccarmnoneeabi": {
+      "type": "toolchain",
+      "version": ">=1.40803.0,<1.40805.0"
+    },
+    "framework-ciaafirmwarev2": {
+      "type": "framework",
+      "optional": true,
+      "version": "~0.10000.0"
+    },
+    "tool-openocd": {
+      "type": "uploader",
+      "optional": true,
+      "version": "~1.900.0"
+    }
+  }
+}

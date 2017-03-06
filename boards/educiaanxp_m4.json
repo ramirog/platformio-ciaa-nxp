@@ -1,0 +1,27 @@
+{
+  "build": {
+    "core": "lpc4337_m4",
+    "cpu": "cortex-m4", 
+    "f_cpu": "48000000L",
+    "ldscript": ["lpc4337_m4.ld",
+		 "lpc4337_m4_mem.ld"],
+    "variant": "blpc4337m4",
+    "extra_flags": "-DCORE_M4"
+  },
+  "debug": {
+    "openocdcfg": "lpc4337.cfg"
+  },
+  "frameworks": [
+    "ciaafirmwarev2"
+  ],
+  "name": "EDUCIAA NXP M4", 
+  "upload": {
+    "maximum_ram_size": 32768, 
+    "maximum_size": 262144, 
+    "protocol": "openocd",
+    "base_addr": "0x1A000000"
+  },
+  "url": "http://proyecto-ciaa.com.ar/", 
+  "vendor": "CIAA"
+}
+
